@@ -19,7 +19,7 @@ router.get('/theory', (req, res) => {
     res.send(theoryPage);
 });
 
-router.get('/terminal', (req, res) => {
+router.get('/terminal_commands', (req, res) => {
     res.send(terminalPage);
 });
 

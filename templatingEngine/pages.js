@@ -17,10 +17,20 @@ export const terminal = readPage('public/pages/terminal/terminal.html');
 // CONSTRUCT PAGES
 //////
 
-export const indexPage = constructPage(index)
+export const indexPage = constructPage(index, {
+    tabTitle: "Home",
+    headerTitle: "Weclome :D"
+});
 
-export const toolsPage = constructPage(tools)
-
-export const theoryPage = constructPage(theory)
-
-export const terminalPage = constructPage(terminal)
+export const toolsPage = constructPage(tools, {
+    tabTitle: "Tools",
+    headerTitle: "Tool Page"
+});
+export const theoryPage = constructPage(theory, {
+    tabTitle: "Theory",
+    headerTitle: "Theory Page"
+});
+export const terminalPage = constructPage(terminal, {
+    tabTitle: "Terminal Commands",
+    headerTitle: "Terminal Page"
+});
