@@ -1,17 +1,49 @@
 import express from 'express';
 const app = express();
 
-app.use(express.static('public'));
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from "url";
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 
-import { index } from './templatingEngine/pages.js';
+import { indexPage } from './templatingEngine/pages.js';
 
 // Pages
 
 app.get('/', (req, res) => {
-    res.send(index);
+    res.send(indexPage);
 });
 
+//
+// Dir Routing
+//
+
+addStaticRoutes(path.resolve(__dirname, "public"));
+addStaticRoutes(path.resolve(__dirname, "templatingEngine"));
+
+function addStaticRoutes(dir, baseUrl = "") {
+    
+    const files = fs.readdirSync(dir, { withFileTypes: true });
+
+    files.forEach((file) => {
+
+        const fullPath = path.join(dir, file.name);
+        const routePath = path.join(baseUrl, file.name).replace(/\\/g, "/");
+
+        if (file.isDirectory()) {
+            addStaticRoutes(fullPath, routePath);
+        } else {
+            app.get(`/${routePath}`, (req, res) => {
+                res.sendFile(fullPath);
+            });
+        }
+    });
+}
+
+//
+// Port / Server
+//
 
 const PORT = process.env.PORT ?? 8080;
 
