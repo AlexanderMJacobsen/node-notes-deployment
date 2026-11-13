@@ -12,9 +12,7 @@ export const theory = readPage('public/pages/theory/theory.html');
 
 export const terminal = readPage('public/pages/terminal/terminal.html');
 
-export const introduction = readPage('public/pages/class-work/introduction.html');
 
-export const js = readPage('public/pages/theory/js.html');
 
 //////
 // CONSTRUCT PAGES
@@ -39,12 +37,4 @@ export const terminalPage = constructPage(terminal, {
     headerTitle: "Terminal Page"
 });
 
-export const introductionPage = constructPage(introduction, {
-    tabTitle: "Introduction",
-    headerTitle: "Introduction Page"
-});
 
-export const jsPage = constructPage(js, {
-    tabTitle: "JS",
-    headerTitle: "Javascript Theory"
-});

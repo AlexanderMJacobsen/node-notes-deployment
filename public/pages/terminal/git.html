@@ -1,0 +1,38 @@
+<p>Git is a versioning tool used to manage versions of code or data.</p>
+<p>To start a Git project, write the following inside a Dir you would like to start verisoning:</p>
+
+<code>git init</code>
+
+<p>Now whenever you make changes, you can now use the following command to view new changes.</p>
+
+<code>git status</code>
+
+<p>Example output:</p>
+
+<code>On branch development
+Your branch is ahead of 'origin/development' by 3 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   public/pages/terminal/git.html</code>
+
+<p>Now we will start the staging process, which is the process of adding, committing and pushing your code to a remote repo</p>
+<p>First we add a new file with:</p>
+
+<code>git add "filename"</code>
+
+<p>After we have added a file, it is now time to commit, where we also write commit messeages, 
+    it is a good idea for good overview to write clean commit messeages</p>
+
+<code>git commit -m "feat: added "filename" to project</code>
+
+<p>We are now ready for the final step which is pushing to a remote repository, if you haven't already used git clone on a remote project,
+    you can now point at one with git remote:  </p>
+
+<code>git remote set-url origin https://github.com/username/example.git</code>
+
+<p>If you have your remote repository set you can now push the code with:</p>
+
+<code>git push</code>
