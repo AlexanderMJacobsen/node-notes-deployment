@@ -3,7 +3,7 @@ import { Router } from 'express';
 const router = Router();
 
 
-import { indexPage, terminalPage, theoryPage, toolsPage } from '../../templatingEngine/pages.js';
+import { indexPage, terminalPage, theoryPage, toolsPage, introductionPage } from '../../templatingEngine/pages.js';
 
 // Pages
 
@@ -19,10 +19,13 @@ router.get('/theory', (req, res) => {
     res.send(theoryPage);
 });
 
-router.get('/terminal_commands', (req, res) => {
+router.get('/terminal-commands', (req, res) => {
     res.send(terminalPage);
 });
 
 
+router.get('/introduction', (req, res) => {
+    res.send(introductionPage);
+});
 
 export default router;
