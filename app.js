@@ -16,6 +16,12 @@ app.use(classWorkRouter);
 import theoryRouter from './public/routers/theoryRouter.js'
 app.use(theoryRouter);
 
+import terminalRouter from './public/routers/terminalRouter.js'
+app.use(terminalRouter);
+
+import toolRouter from './public/routers/toolRouter.js'
+app.use(toolRouter);
+
 //
 // Dir Routing
 //
