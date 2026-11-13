@@ -4,16 +4,11 @@ const app = express();
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from "url";
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-
-import { indexPage } from './templatingEngine/pages.js';
-
-// Pages
-
-app.get('/', (req, res) => {
-    res.send(indexPage);
-});
+import pagesRouter from './public/routers/pagesRouter.js'
+app.use(pagesRouter);
 
 //
 // Dir Routing
@@ -40,10 +35,6 @@ function addStaticRoutes(dir, baseUrl = "") {
         }
     });
 }
-
-//
-// Port / Server
-//
 
 const PORT = process.env.PORT ?? 8080;
 
