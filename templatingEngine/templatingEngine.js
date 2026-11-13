@@ -5,6 +5,8 @@ export function constructPage(page, options = {}) {
     const footer = readPage('public/components/footer/footer.html');
 
     return header
+        .replace('{{TAB_TITLE}}', options.tabTitle || "Not_Found")
+        .replace('{{HEADER_TITLE}}', options.headerTitle || "Not_Found")
         + page
         + footer;
 

@@ -1,0 +1,18 @@
+<h2>var, let, const</h2>
+<p>We do not use var as it has varius behavours that cause unitended bugs</p>
+<p>A classic example of this is var inside of a for loop, 
+    the big problem with this is var is a global variable, so if you use i in multiple places,
+    you start getting unitended bugs.
+</p>
+<p>Instead we will be using const as much as possible, and only if we for example need a for loop,
+    we will be using let, as const once is assigned it can't be reassigned again.
+    Where as let can be.
+    Below are some examples of when you prefer to use const, and when a let is preffered.
+</p>
+
+<code>
+    const tax = 40;
+    
+    let count = 0;
+    count += 1;
+</code>

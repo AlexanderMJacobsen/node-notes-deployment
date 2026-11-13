@@ -10,6 +10,18 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 import pagesRouter from './public/routers/pagesRouter.js'
 app.use(pagesRouter);
 
+import classWorkRouter from './public/routers/classWorkRouter.js'
+app.use(classWorkRouter);
+
+import theoryRouter from './public/routers/theoryRouter.js'
+app.use(theoryRouter);
+
+import terminalRouter from './public/routers/terminalRouter.js'
+app.use(terminalRouter);
+
+import toolRouter from './public/routers/toolRouter.js'
+app.use(toolRouter);
+
 //
 // Dir Routing
 //
